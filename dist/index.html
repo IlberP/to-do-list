@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <title>ToDo Page</title>
+    <link rel="stylesheet" href='./styles/styles.css'>
+</head>
+<header>
+    <h2>To-Do List</h2>
+    <button id="create">Create a task</button>
+</header>
+<body>
+    <div id='welcome'>
+        <div id='message'>Create your ToDo list by clicking on create a task!
+            <button type="submit" id='close'>X</button>
+        </div>
+        
+    </div>
+    <div class='form' id="taskForm">
+        <form id="form" action="/src/modules/addTask.js" class='formContainer'>
+            <div id="input">
+               <p> <input type="text" id="taskName" placeholder="Task" name="taskName" required></p>
+
+               <p><input type='date' id="dateDue" name="dateDue" required></p>
+
+               <p><label for="priority">Priority level</label></p>
+                    <select id="priority">
+                        <option value="important">important</option>
+                        <option value='urgent'>Urgent</option>
+                        <option value='notImportant'>not important</option>
+                    </select>
+                <button type='submit' class="submitBtn">Submit</button>
+                <button type="submit" class='btnCancel'>cancel</button>
+            </div>
+        </form>
+    </div>
+    <section id="sidebar">
+        <nav>
+            <li id="sidebarHome"><a href="#">Home</a></li>
+            <li id='sidebarToday'><a href="#">Today</a></li>
+            <li id="sidebarWeek"><a href="#">Weekly</a></li>
+            <li id="sidebarCalender"><a href="#">Calender</a></li>
+            <li id="sidebarImportant"><a href="#">Important</a></li>
+        </nav>
+    </section>
+    <div id="displaySection">
+        <div id='displayContainer'>
+            <div id="sectionTitle">Home</div>
+            <div id="dateTitle">Due Date</div>
+        </div>
+
+        <div id='taskContainer'>task
+            <div id="date">date</div>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
