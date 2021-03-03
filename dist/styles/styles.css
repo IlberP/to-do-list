@@ -69,3 +69,12 @@ header{
     grid-template-columns: 1fr 1fr;
     position: absolute;
 }
+
+.task {
+    display: flex;
+    flex-direction: row;
+}
+
+#taskTitle {
+    color: blue;
+}

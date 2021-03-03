@@ -1,65 +1,67 @@
-//create this into a factory function
-const create = document.querySelectorAll('#create')
-const submit = document.querySelectorAll('submitBtn')
-const btnCancel = document.querySelectorAll('.btnCancel')
+// import taskInfo from './modules/createTask.js';
+import createInfo from './createTask.js';
 
-function taskInfo(title, date, importance){
-    const taskInfo = {};
-    taskInfo.title = title;
-    taskInfo.date = date;
-    taskInfo.importance = importance;
-    return taskInfo
+// function ResetForm(){
+//     document.getElementById('taskForm').reset()
+// }
+
+function taskInfo(taskName, dateDue, priority){
+    this.taskName = taskName.value
+    this.dateDue = dateDue;
+    this.priority = priority
+};
+
+let taskList = [];
+let taskDetails;
+
+function appendTask(){
+    //preventDefault()
+    document.getElementById('taskForm').style.display = 'none';
+    taskDetails = new taskInfo(taskName, dateDue, priority)
+    taskList.push(taskDetails)
+    pushTask()
+    // ResetForm()
 }
 
-function createInfo(){
-    create.forEach(create => {
-        create.addEventListener('click', function(){
-            document.getElementById('taskForm').style.display = 'block';
-        })
-    })
-    btnCancel.forEach(btnCancel => {
-        btnCancel.addEventListener('click', function(){
-            document.getElementById('taskForm').style.display = 'none'
-        })
-    })
+function pushTask(){
+    const taskContainer = document.getElementById('#taskContainer');
+    const tasks = document.querySelectorAll('.task');
+    tasks.forEach(task => taskContainer.removeChild(task))
+
+    for(let i = 0; i < taskList.length; i++)
+    makeTask(taskList[i])
 }
 
-export default taskInfo
-export default createInfo
+function makeTask(item){
+    const taskContainer = document.querySelector('#taskContainer');
+    const task = document.createElement('div');
+    task.classList.add('task');
+    task.setAttribute('div', taskList.indexOf(item));
+
+    const taskName = document.createElement('div') 
+    taskName.textContent = item.taskName
+    taskName.classList.add('taskName')
+    task.appendChild(taskName);
+}
 
 
 
-// create.forEach(create => {
-//     create.addEventListener('click', function(){
-//         document.getElementById('taskForm').style.display = 'block'
-//     })
-// })
+createInfo()
+// const module = () => {
+//     const taskFactory = (taskName, dateDue, priority, description) => {
+//         return { taskName, dateDue, priority, description}
+//     };
 
-// btnCancel.forEach(btnCancel => {
-//     btnCancel.addEventListener('click', function(){
-//         document.getElementById('taskform').style.display = 'none'
-//     })
-// })
+//     let taskArray = []
 
+//     const taskHashMap = new Map();
 
-
-// function Task(title, date, priority){
-//     this.title = title.value;
-//     this.date = date.value;
-//     this.priority = priority.value
-
+//     function initialHashMapSync () {
+//         for( let i = 0; i < taskArray.length; i++) {
+//             if(taskArray[i].)
+//         }
+//     }
 // }
 
-// let taskInfo
-// function addTask(){
-//     event.preventDefault()
-//     taskInfo = new task(title, date, priority)
 
-// }
-
-// function createTask(item){
-//     const container = document.querySelector('#taskContainer');
-//     const task = document.createElement('div')
-//     task.classList.add('task')
-//     task.setAttribute('div')
-// }
+export default appendTask
