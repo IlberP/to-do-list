@@ -15,11 +15,12 @@ let taskList = [];
 let taskDetails;
 
 function appendTask(){
-    //preventDefault()
+    event.preventDefault()
     document.getElementById('taskForm').style.display = 'none';
     taskDetails = new taskInfo(taskName, dateDue, priority)
     taskList.push(taskDetails)
     pushTask()
+    storeTask()
     // ResetForm()
 }
 
@@ -38,10 +39,16 @@ function makeTask(item){
     task.classList.add('task');
     task.setAttribute('div', taskList.indexOf(item));
 
-    const taskName = document.createElement('div') 
-    taskName.textContent = item.taskName
-    taskName.classList.add('taskName')
-    task.appendChild(taskName);
+    const taskNames = document.createElement('div') 
+    taskNames.textContent = item.taskName
+    taskNames.classList.add('taskName')
+    task.appendChild(taskNames);
+
+    taskContainer.appendChild(task)
+}
+
+function storeTask(){
+    localStorage.setItem('taskList', JSON.stringify(taskList))
 }
 
 

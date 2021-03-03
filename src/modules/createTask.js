@@ -1,7 +1,7 @@
 import appendTask from './addTask.js'
 //create this into a factory function
 const create = document.querySelectorAll('#create')
-const submit = document.querySelectorAll('submitBtn')
+const submitBtn = document.querySelectorAll('.submitBtn')
 const btnCancel = document.querySelectorAll('.btnCancel')
 
 // function taskInfo(title, date, importance){
@@ -24,11 +24,13 @@ function createInfo(){
             document.getElementById('taskForm').style.display = 'none'
         })
     })
-    submit.forEach(submit => {
-        submit.addEventListener('click', appendTask())
-        event.preventDefault
+    submitBtn.forEach(submitBtn => {
+        submitBtn.addEventListener('click', appendTask)
+        // event.preventDefault
     })
 }
+
+
 
 // export default taskInfo
 export default createInfo
