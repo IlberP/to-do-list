@@ -4,9 +4,10 @@ body {
 
 header{
     /* text-align: center; */
-    background-color: lightblue;
+    background-color: gray;
     display: grid;
     grid-template-columns: 1fr 1fr ;
+    border: 1px ridge black;
 }
 #create{
     border-radius: 60px;
@@ -36,9 +37,22 @@ header{
     background-color: lightgrey;
 }
 
+.taskName{
+    font-weight: bold;
+}
+
 #sidebar {
     float: left;
     list-style: none;
+    color:black;
+    background-color: gray;
+    height: 800px;
+    width: 150px;
+    display: grid;
+    row-gap: 100px !important;
+    border: 1px ridge black;
+
+    
 }
 
 #displaySection{
@@ -49,7 +63,7 @@ header{
 }
 
 #displayContainer{
-    width: 800px;
+    width: 600px;
     height: 90%;
     margin: 50px auto;
     margin-left: 200px;
@@ -61,7 +75,7 @@ header{
 #displaySection #taskContainer{
     display: grid;
     height: 90%;
-    width: 580px;
+    width: 600px;
     margin-left: 200px;
     margin-top: 80px;
     /* margin: 80px 100px auto auto; */
@@ -71,10 +85,70 @@ header{
 }
 
 .task {
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    height: 40px;
+    width: 580px;
+    margin: 20px;
+    
+    /* border: 1px solid black; */
 }
+
+
 
 #taskTitle {
     color: blue;
 }
+
+#taskContainer{
+    display: flex !important;
+    justify-items: space-between !important;
+    flex-direction: column;
+    margin: 50x auto;
+    margin-left: 200px;
+    
+    
+}
+
+
+
+details {
+    border: 1px solid #aaa;
+    border-radius: 4px;
+    padding: .5em .5em 0;
+    background-color: white;
+    color: black !important;
+}
+
+summary {
+    font-weight: bold;
+    margin: -.5em -.5em 0;
+    padding: .5em;
+}
+
+details[open] {
+    padding: .5em;
+}
+
+details[open] summary {
+    border-bottom: 1px solid #aaa;
+    margin-bottom: .5em;
+}
+
+.complete{
+    display: flex !important;
+    border-radius: 90px;
+    height: 20px !important;
+    width: 30px !important;
+
+}
+/* 
+.descriptionText {
+    display: none;
+    position: absolute;
+    align-items: center;
+    border: 5px solid black;
+    height: 300px;
+    width: 500px;
+    background-color: lightgrey;
+} */

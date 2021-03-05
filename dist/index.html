@@ -16,7 +16,7 @@
         
     </div>
     <div class='form' id="taskForm">
-        <form id="form" action="/src/modules/addTask.js" class='formContainer'>
+        <form id="form"  class='formContainer'>
             <div id="input">
                <p> <input type="text" id="taskName" placeholder="Task" name="taskName" required></p>
 
@@ -26,12 +26,15 @@
                     <select id="priority">
                         <option value="important">important</option>
                         <option value='urgent'>Urgent</option>
-                        <option value='notImportant'>not important</option>
+                        <option value='not important'>Not important</option>
                     </select>
+                <!-- <p><input type="text" id='description' placeholder="Description" name="description"></p> -->
                 <button type='submit' class="submitBtn">Submit</button>
                 <button type="submit" class='btnCancel'>cancel</button>
             </div>
         </form>
+        <p><label for='description'>Description</label></p>
+            <textarea id='description' name='comment' form='form' rows="5" cols="30"></textarea>
     </div>
     <section id="sidebar">
         <nav>
@@ -39,17 +42,18 @@
             <li id='sidebarToday'><a href="#">Today</a></li>
             <li id="sidebarWeek"><a href="#">Weekly</a></li>
             <li id="sidebarCalender"><a href="#">Calender</a></li>
-            <li id="sidebarImportant"><a href="#">Important</a></li>
+            <li id="sidebarImportant"><a href="#">Urgent</a></li>
         </nav>
     </section>
     <div id="displaySection">
         <div id='displayContainer'>
             <div id="sectionTitle">Home</div>
             <div id="dateTitle">Due Date</div>
+            <div id='important'>Importance</div>
         </div>
 
-        <div id='taskContainer'>task
-            <div id="date">date</div>
+        <div id='taskContainer'>
+            <!-- <div id="date"></div> -->
         </div>
     </div>
     <script src="main.js"></script>
